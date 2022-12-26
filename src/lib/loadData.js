@@ -56,7 +56,7 @@ function loadStaticData(forecasts, setForecasts) {
     updateCity: "Bellingham",
     updateUsState: "WA",
   };
-  this.location = "Bellingham, WA";
+  // this.location = "Bellingham, WA";
   const staticData = {
     realtime: devJson.realtimeDevJson,
     nowcast: devJson.nowcastDevJson,
@@ -89,7 +89,7 @@ function updateDisplay(data) {
   this.$store.commit("updateLatLong", data.geo.lat + ", " + data.geo.long);
   this.$store.commit("updateCity", data.geo.city);
   this.$store.commit("updateUsState", data.geo.state);
-  this.location = data.geo.city + ", " + data.geo.state;
+  // this.location = data.geo.city + ", " + data.geo.state;
 
   this.$store.commit("updateRealtimeForecast", data.realtime);
   this.$store.commit("updateNowcastForecast", data.nowcast);

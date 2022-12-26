@@ -1,3 +1,4 @@
+// import icons from './SvgIcons.jsx'
 // const icons = {
 //   chanceflurries: require("../assets/icons/chanceflurries.svg"),
 //   chancerain: require("../assets/icons/chancerain.svg"),
@@ -45,7 +46,6 @@ const WeatherIcon = ({ isLoaded, narrative, isNight, className }) => {
   // Shows question mark weather icon if no other icon is found
   let icon = "unknown";
   let str = narrative.toLowerCase();
-  console.log("str:", str);
   if (str.includes("freezing")) icon = "sleet";
   if (str.includes("ice")) icon = "sleet";
   if (str.includes("snow")) icon = "snow";
@@ -62,10 +62,14 @@ const WeatherIcon = ({ isLoaded, narrative, isNight, className }) => {
 
   // Assembles path
 
-  const weatherIcon = require("../assets/icons/" + isNight + icon + ".svg");
+  // const weatherIcon = require("../assets/icons/" + isNight + icon + ".svg");
 
   return isLoaded ? (
-    <img src={weatherIcon} alt="weather icon" className={className} />
+    <img
+      src={"/public/icons/" + isNight + icon + ".svg"}
+      alt="weather icon"
+      className={className}
+    />
   ) : (
     ""
   );

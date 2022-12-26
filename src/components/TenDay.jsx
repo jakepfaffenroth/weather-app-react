@@ -30,7 +30,7 @@ const formatData = {
 const TenDay = ({ isLoaded, daily }) => {
   const days = daily.map((dayIndex) => {
     return (
-      <div className="text-center">
+      <div className="text-center" key={dayIndex.myId}>
         <h3 className="text-lg">{formatData.getDayName(dayIndex.date)}</h3>
         {/* <!-- Weather icons --> */}
         <WeatherIcon

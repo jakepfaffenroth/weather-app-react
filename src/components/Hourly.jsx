@@ -32,7 +32,7 @@ const formatData = {
 const Hourly = ({ hourly, isLoaded }) => {
   const hours = hourly.map((hourIndex) => {
     return (
-      <div className="text-center">
+      <div className="text-center" key={hourIndex.myId}>
         <p className="text-xs font-light h-4 overflow-x-auto">
           {formatData.getDate(hourIndex.observation_time.value)}
         </p>
